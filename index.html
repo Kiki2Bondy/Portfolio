@@ -188,8 +188,8 @@
   }
   .cat-header:first-of-type{ margin-top:0; }
   .cat-header .cat-title{
-    font-family:'JetBrains Mono',monospace; font-size:0.76rem; text-transform:uppercase;
-    letter-spacing:0.12em; color:var(--daylight); white-space:nowrap;
+    font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:clamp(1.2rem,2.6vw,1.6rem);
+    letter-spacing:-0.01em; color:var(--daylight); white-space:nowrap;
   }
   .cat-header .cat-line{ flex:1; height:1px; background:var(--line); }
 
@@ -208,6 +208,11 @@
     border-bottom:1px dashed var(--line);
   }
   .card-head h3{font-size:1.5rem; font-weight:600;}
+  .card-role{
+    margin-top:6px;
+    font-family:'JetBrains Mono',monospace; font-size:0.8rem; text-transform:uppercase;
+    letter-spacing:0.06em; color:var(--tungsten);
+  }
   .card-tag{
     font-family:'JetBrains Mono',monospace; font-size:0.68rem; text-transform:uppercase;
     letter-spacing:0.08em; padding:5px 10px; border:1px solid var(--daylight); color:var(--daylight);
@@ -379,14 +384,16 @@
     <div class="cat-header"><span class="cat-title">Expérience</span><span class="cat-line"></span></div>
     <div class="card">
       <div class="card-head">
-        <h3>TSF — Stage technique</h3>
+        <div>
+          <h3>TSF — Stage technique</h3>
+          <div class="card-role">Stagiaire technique</div>
+        </div>
         <div class="card-tag">Formation pro</div>
       </div>
       <div class="card-body">
         <p>Stage chez TSF, l'un des plus grands loueurs de matériel cinéma en France. Prise en main de matériel caméra et lumière professionnel, logistique de plateau à grande échelle.</p>
         <div class="card-specs">
           <div><b>Structure</b>TSF</div>
-          <div><b>Rôle</b>Stagiaire technique</div>
         </div>
       </div>
     </div>
@@ -394,13 +401,15 @@
     <div class="cat-header"><span class="cat-title">Court / Moyen / Long métrage</span><span class="cat-line"></span></div>
     <div class="card">
       <div class="card-head">
-        <h3>La Vie en Violet</h3>
+        <div>
+          <h3>La Vie en Violet</h3>
+          <div class="card-role">Cadreur</div>
+        </div>
         <div class="card-tag">Moyen métrage</div>
       </div>
       <div class="card-body">
         <p>Film d'action sur un groupe de criminels, visant la dénonciation de la pédocriminalité.</p>
         <div class="card-specs">
-          <div><b>Rôle</b>Cadreur</div>
           <div><b>Réalisateur</b>Killian Jacquet</div>
         </div>
       </div>
@@ -413,32 +422,36 @@
     <div class="cat-header"><span class="cat-title">Clip</span><span class="cat-line"></span></div>
     <div class="card">
       <div class="card-head">
-        <h3>Ensemble</h3>
+        <div>
+          <h3>Ensemble</h3>
+          <div class="card-role">Réalisateur</div>
+        </div>
         <div class="card-tag">Clip musical</div>
       </div>
       <div class="card-body">
         <p>Réalisation d'un clip musical sur la musique "Ensemble" de Yusmv.</p>
         <div class="card-specs">
-          <div><b>Rôle</b>Réalisateur</div>
           <div><b>Format</b>Clip musical</div>
         </div>
       </div>
-      <a class="card-video" href="#" target="_blank" rel="noopener">
+      <a class="card-video" href="https://www.youtube.com/watch?v=qdU4Zrbpkjw" target="_blank" rel="noopener">
         <span class="play-icon"></span>
-        <span>Lien YouTube à ajouter →</span>
+        <span>Voir sur YouTube →</span>
       </a>
     </div>
 
     <div class="cat-header"><span class="cat-title">Pub</span><span class="cat-line"></span></div>
     <div class="card">
       <div class="card-head">
-        <h3>Les feuilles mortes</h3>
+        <div>
+          <h3>Les feuilles mortes</h3>
+          <div class="card-role">Chef opérateur</div>
+        </div>
         <div class="card-tag">Pub</div>
       </div>
       <div class="card-body">
         <p>Pub pour un rouge à lèvres dans le cadre d'un travail d'école, le tout filmé en noir et blanc.</p>
         <div class="card-specs">
-          <div><b>Rôle</b>Chef opérateur</div>
           <div><b>Réalisateur</b>Maîza Talarico</div>
         </div>
       </div>
@@ -462,14 +475,19 @@
           <li>Premiere Pro</li>
           <li>DaVinci Resolve</li>
           <li>After Effects</li>
+          <li>Photoshop</li>
+          <li>Nuke</li>
+          <li>Blender</li>
         </ul>
       </div>
       <div class="skill-col">
         <h4>Lumière plateau</h4>
         <ul>
           <li>Électricien de plateau</li>
-          <li>DMX512 / Art-Net</li>
+          <li>Protocole DMX512</li>
+          <li>Art-Net / contrôle réseau</li>
           <li>Nanlux Evoke 900C</li>
+          <li>Apps Luminair Pro / Blackout</li>
         </ul>
       </div>
       <div class="skill-col">
