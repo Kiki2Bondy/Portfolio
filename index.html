@@ -218,25 +218,30 @@
     letter-spacing:0.08em; padding:5px 10px; border:1px solid var(--daylight); color:var(--daylight);
     white-space:nowrap; height:fit-content;
   }
-  .card-body{padding:22px 28px 8px; display:flex; gap:32px; flex-wrap:wrap;}
-  .card-body p{color:#D9D4CB; max-width:480px; flex:2 1 320px;}
+  .card-body{
+    padding:22px 28px 28px;
+    display:grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap:32px;
+    align-items:start;
+  }
+  @media (max-width:700px){ .card-body{ grid-template-columns:1fr; } }
+  .card-body p{color:#D9D4CB;}
   .card-specs{
     font-family:'JetBrains Mono',monospace; font-size:0.75rem; color:var(--steel);
-    flex:1 1 180px; display:flex; flex-direction:column; gap:8px;
+    display:flex; flex-direction:column; gap:14px;
   }
   .card-specs div b{color:var(--paper); display:block; font-weight:500; margin-bottom:2px;}
   .card-specs .placeholder{ color:var(--tungsten); opacity:0.85; }
 
   /* grand cadre "aperçu vidéo" sous chaque projet, esprit showreel */
   .project-reel{
-    margin:22px 28px 28px;
-    max-width:50%;
+    margin-top:20px;
     border:1px solid var(--line);
     background:var(--black-soft);
     aspect-ratio:16/9;
     overflow:hidden;
   }
-  @media (max-width:640px){ .project-reel{ max-width:100%; } }
   .project-reel iframe{ width:100%; height:100%; border:0; display:block; }
   .project-reel.empty{
     display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px;
@@ -420,7 +425,13 @@
         <div class="card-tag">Moyen métrage</div>
       </div>
       <div class="card-body">
-        <p>Film d'action sur un groupe de criminels, visant la dénonciation de la pédocriminalité.</p>
+        <div>
+          <p>Film d'action sur un groupe de criminels, visant la dénonciation de la pédocriminalité.</p>
+          <a class="project-reel empty" href="#" target="_blank" rel="noopener">
+            <span class="play-icon-lg"></span>
+            <span class="reel-label">Lien YouTube à ajouter</span>
+          </a>
+        </div>
         <div class="card-specs">
           <div><b>Réalisateur</b>Killian Jacquet</div>
           <div><b>Durée</b><span class="placeholder">à compléter</span></div>
@@ -429,10 +440,6 @@
           <div><b>Matériel</b><span class="placeholder">à compléter</span></div>
         </div>
       </div>
-      <a class="project-reel empty" href="#" target="_blank" rel="noopener">
-        <span class="play-icon-lg"></span>
-        <span class="reel-label">Lien YouTube à ajouter</span>
-      </a>
     </div>
 
     <div class="cat-header"><span class="cat-title">Clip</span><span class="cat-line"></span></div>
@@ -445,7 +452,18 @@
         <div class="card-tag">Clip musical</div>
       </div>
       <div class="card-body">
-        <p>Réalisation d'un clip musical sur la musique "Ensemble" de Yusmv.</p>
+        <div>
+          <p>Réalisation d'un clip musical sur la musique "Ensemble" de Yusmv.</p>
+          <div class="project-reel">
+            <iframe
+              src="https://www.youtube.com/embed/qdU4Zrbpkjw"
+              title="Ensemble — Clip de Yusmv"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+              loading="lazy">
+            </iframe>
+          </div>
+        </div>
         <div class="card-specs">
           <div><b>Format</b>Clip musical</div>
           <div><b>Durée</b><span class="placeholder">à compléter</span></div>
@@ -453,15 +471,6 @@
           <div><b>Lieu de tournage</b><span class="placeholder">à compléter</span></div>
           <div><b>Matériel</b><span class="placeholder">à compléter</span></div>
         </div>
-      </div>
-      <div class="project-reel">
-        <iframe
-          src="https://www.youtube.com/embed/qdU4Zrbpkjw"
-          title="Ensemble — Clip de Yusmv"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
-          loading="lazy">
-        </iframe>
       </div>
     </div>
 
@@ -475,7 +484,13 @@
         <div class="card-tag">Pub</div>
       </div>
       <div class="card-body">
-        <p>Pub pour un rouge à lèvres dans le cadre d'un travail d'école, le tout filmé en noir et blanc.</p>
+        <div>
+          <p>Pub pour un rouge à lèvres dans le cadre d'un travail d'école, le tout filmé en noir et blanc.</p>
+          <a class="project-reel empty" href="#" target="_blank" rel="noopener">
+            <span class="play-icon-lg"></span>
+            <span class="reel-label">Lien YouTube à ajouter</span>
+          </a>
+        </div>
         <div class="card-specs">
           <div><b>Réalisateur</b>Maîza Talarico</div>
           <div><b>Durée</b><span class="placeholder">à compléter</span></div>
@@ -484,10 +499,6 @@
           <div><b>Matériel</b><span class="placeholder">à compléter</span></div>
         </div>
       </div>
-      <a class="project-reel empty" href="#" target="_blank" rel="noopener">
-        <span class="play-icon-lg"></span>
-        <span class="reel-label">Lien YouTube à ajouter</span>
-      </a>
     </div>
 
   </div>
