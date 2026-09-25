@@ -115,7 +115,6 @@
       -ms-overflow-style:none; scrollbar-width:none;
     }
     .navlinks::-webkit-scrollbar{ display:none; }
-    .navlinks span{display:none;}
   }
 
   /* ---------- HERO ---------- */
@@ -124,7 +123,6 @@
     overflow:hidden;
     border-bottom:1px solid var(--line);
   }
-  .hero.hero-sub{ padding:64px 0 56px; }
   .gel-bar{
     position:absolute; top:0; left:0; right:0; height:5px;
     background:linear-gradient(90deg, var(--tungsten) 0%, var(--tungsten) 50%, var(--daylight) 50%, var(--daylight) 100%);
@@ -145,11 +143,6 @@
     line-height:0.98;
     max-width:850px;
   }
-  h1.title-sub{
-    font-size:clamp(2rem, 5vw, 3.2rem);
-    font-weight:700;
-    line-height:1.02;
-  }
   .role{
     margin-top:22px;
     font-size:clamp(1.05rem,2.4vw,1.4rem);
@@ -158,7 +151,6 @@
     font-style:italic;
     font-weight:400;
   }
-  .role .amp{color:var(--daylight); font-style:normal;}
   .hero-meta{
     margin-top:40px;
     display:flex; gap:32px; flex-wrap:wrap;
@@ -168,17 +160,8 @@
   }
   .hero-meta strong{color:var(--paper); display:block; font-size:0.7rem; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:4px; font-weight:500;}
 
-  .back-link{
-    display:inline-flex; align-items:center; gap:8px;
-    font-family:'JetBrains Mono',monospace; font-size:0.72rem; text-transform:uppercase;
-    letter-spacing:0.1em; color:var(--steel); text-decoration:none; margin-bottom:28px;
-    transition:color .2s;
-  }
-  .back-link:hover{ color:var(--tungsten); }
-
   /* ---------- SECTION LABELS ---------- */
   .section{padding:90px 0; border-bottom:1px solid var(--line);}
-  .section-tight{padding:64px 0;}
   .eyebrow{
     font-family:'JetBrains Mono',monospace;
     font-size:0.72rem;
@@ -193,40 +176,23 @@
     max-width:640px;
     margin-bottom:36px;
   }
-  .more-link{
-    display:inline-flex; align-items:center; gap:8px;
-    margin-top:28px;
-    font-family:'JetBrains Mono',monospace; font-size:0.78rem; text-transform:uppercase;
-    letter-spacing:0.08em; color:var(--tungsten); text-decoration:none;
-    border-bottom:1px solid transparent;
-    transition:border-color .2s;
-  }
-  .more-link:hover{ border-color:var(--tungsten); }
 
   /* ---------- ABOUT ---------- */
-  .about-grid{
-    display:grid;
-    grid-template-columns: 1.3fr 1fr;
-    gap:60px;
-  }
-  @media (max-width:760px){ .about-grid{grid-template-columns:1fr;} }
-  .about-text p{margin-bottom:18px; font-size:1.05rem; color:#D9D4CB; max-width:520px;}
+  .about-text p{margin-bottom:18px; font-size:1.05rem; color:#D9D4CB; max-width:620px;}
   .about-text strong{color:var(--paper); font-weight:600;}
-  .stat-block{
-    border-left:2px solid var(--daylight);
-    padding-left:20px;
-    margin-top:8px;
-  }
-  .stat-block .num{
-    font-family:'Space Grotesk',sans-serif;
-    font-size:2.6rem; font-weight:700; color:var(--tungsten); line-height:1;
-  }
-  .stat-block .lbl{
-    font-family:'JetBrains Mono',monospace; font-size:0.72rem; color:var(--steel);
-    text-transform:uppercase; letter-spacing:0.08em; margin-top:8px;
-  }
 
   /* ---------- PROJECTS (slate cards) ---------- */
+  .cat-header{
+    display:flex; align-items:center; gap:14px;
+    margin:44px 0 18px;
+  }
+  .cat-header:first-of-type{ margin-top:0; }
+  .cat-header .cat-title{
+    font-family:'JetBrains Mono',monospace; font-size:0.76rem; text-transform:uppercase;
+    letter-spacing:0.12em; color:var(--daylight); white-space:nowrap;
+  }
+  .cat-header .cat-line{ flex:1; height:1px; background:var(--line); }
+
   .card{
     border:1px solid var(--line);
     background:var(--black-soft);
@@ -247,14 +213,41 @@
     letter-spacing:0.08em; padding:5px 10px; border:1px solid var(--daylight); color:var(--daylight);
     white-space:nowrap; height:fit-content;
   }
-  .card-body{padding:22px 28px 28px; display:flex; gap:32px; flex-wrap:wrap;}
+  .card-body{padding:22px 28px 8px; display:flex; gap:32px; flex-wrap:wrap;}
   .card-body p{color:#D9D4CB; max-width:480px; flex:2 1 320px;}
   .card-specs{
     font-family:'JetBrains Mono',monospace; font-size:0.75rem; color:var(--steel);
     flex:1 1 180px; display:flex; flex-direction:column; gap:8px;
   }
   .card-specs div b{color:var(--paper); display:block; font-weight:500; margin-bottom:2px;}
-  .placeholder{color:var(--tungsten); opacity:0.85;}
+
+  /* petit cadre "lien youtube" dans chaque projet, esprit showreel */
+  .card-video{
+    margin:18px 28px 26px;
+    display:flex; align-items:center; gap:14px;
+    padding:14px 18px;
+    border:1px solid var(--line);
+    background:rgba(255,255,255,0.02);
+    text-decoration:none;
+    transition:border-color .2s, background .2s;
+  }
+  .card-video:hover{ border-color:var(--tungsten); background:rgba(232,135,62,0.06); }
+  .card-video .play-icon{
+    width:34px; height:34px; border-radius:50%; flex-shrink:0;
+    border:1px solid var(--tungsten);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .card-video .play-icon::before{
+    content:"";
+    border-style:solid; border-width:6px 0 6px 10px;
+    border-color:transparent transparent transparent var(--tungsten);
+    margin-left:3px;
+  }
+  .card-video span{
+    font-family:'JetBrains Mono',monospace; font-size:0.75rem; text-transform:uppercase;
+    letter-spacing:0.06em; color:var(--steel);
+  }
+  .card-video:hover span{ color:var(--paper); }
 
   /* ---------- SKILLS ---------- */
   .skill-cols{display:grid; grid-template-columns:repeat(3,1fr); gap:32px;}
@@ -281,18 +274,6 @@
     overflow:hidden;
   }
   .reel-box iframe{ width:100%; height:100%; border:0; display:block; }
-  .reel-box .mono{color:var(--steel); font-size:0.78rem;}
-  .play-icon{
-    width:56px;height:56px;border-radius:50%;
-    border:1px solid var(--tungsten);
-    display:flex;align-items:center;justify-content:center;
-  }
-  .play-icon::before{
-    content:"";
-    border-style:solid; border-width:9px 0 9px 15px;
-    border-color:transparent transparent transparent var(--tungsten);
-    margin-left:4px;
-  }
   .reel-hero-wrap{ max-width:900px; margin:0 auto; }
 
   /* ---------- CONTACT ---------- */
@@ -330,17 +311,18 @@
 </div>
 <nav>
   <div class="wrap">
-    <a href="index.html" class="brand">KH</a>
+    <a href="#top" class="brand">KH</a>
     <div class="navlinks">
-      <a href="about.html" target="_blank" rel="noopener">À propos</a>
-      <a href="index.html#reel">Showreel</a>
-      <a href="projects.html" target="_blank" rel="noopener">Projets</a>
-      <a href="skills.html" target="_blank" rel="noopener">Compétences</a>
+      <a href="#about">À propos</a>
+      <a href="#reel">Showreel</a>
+      <a href="#projects">Projets</a>
+      <a href="#skills">Compétences</a>
+      <a href="#contact">Contact</a>
     </div>
   </div>
 </nav>
 
-<header class="hero">
+<header class="hero" id="top">
   <div class="gel-bar"></div>
   <div class="wrap">
     <div class="slate">
@@ -349,7 +331,7 @@
       <span>STOCK <b>Département Images</b></span>
       <span>DATE <b>2026</b></span>
     </div>
-     <p class="role">Kîran Hubert Bonnon</p>
+    <p class="role">Kîran Hubert Bonnon</p>
     <h1 class="title">Chef Opérateur</h1>
     <p class="role">Mais également selon les projets "réalisateur, cadreur, éléctro et monteur".</p>
     <div class="hero-meta">
@@ -378,71 +360,131 @@
   </div>
 </section>
 
-<section class="section" id="about-teaser">
+<section class="section" id="about">
   <div class="wrap">
     <div class="eyebrow">Profil</div>
     <h2 class="h-title">Chemin de vie atypique.</h2>
     <div class="about-text">
-      <p>Né à <strong>Marseille</strong>, j'ai par la suite vécu en <strong>Indonesie</strong> puis dans les <strong>Caraîbes</strong> pendant une bonne partie de ma vie. J'ai donc eu la chance de découvrir des paysages et cultures totalement differentes. Par la suite mes études ont fait que je suis venu habiter à <strong>Montpellier</strong><p> 
-      <p>À présent, diplomé d'une licence de Cinéma, j'essaye de me construire  en tant que <strong>chef Opérateur</strong> mais aussi tout poste lié au département de l'image comme <strong>cadreur, éléctro</strong> et même <strong>monteur</strong>.
-      <p>Mon <strong>objectif  ?</strong> être le plus polyvalent possible.</p>
+      <p>Né à <strong>Marseille</strong>, j'ai vécu en dehors de la France une bonne partie de ma vie — entre l'<strong>Indonésie</strong> et les <strong>Caraïbes</strong> — avant de venir étudier à <strong>Montpellier</strong>. Cette double culture, ce regard construit entre plusieurs territoires et plusieurs lumières, nourrit ma manière de raconter une histoire à l'image.</p>
+      <p>Diplômé d'une licence Cinéma et Audiovisuel, j'essaye de me construire en tant que <strong>chef opérateur</strong>, mais aussi sur tout poste lié au département image : <strong>cadreur, éléctro</strong> et <strong>monteur</strong>. Mon objectif : être le plus polyvalent possible.</p>
     </div>
-    <a href="about.html" class="more-link" target="_blank" rel="noopener">En savoir plus — parcours complet →</a>
   </div>
 </section>
 
-<section class="section" id="projects-teaser">
+<section class="section" id="projects">
   <div class="wrap">
     <div class="eyebrow">Filmographie</div>
     <h2 class="h-title">Projets &amp; expériences</h2>
 
+    <div class="cat-header"><span class="cat-title">Expérience</span><span class="cat-line"></span></div>
+    <div class="card">
+      <div class="card-head">
+        <h3>TSF — Stage technique</h3>
+        <div class="card-tag">Formation pro</div>
+      </div>
+      <div class="card-body">
+        <p>Stage chez TSF, l'un des plus grands loueurs de matériel cinéma en France. Prise en main de matériel caméra et lumière professionnel, logistique de plateau à grande échelle.</p>
+        <div class="card-specs">
+          <div><b>Structure</b>TSF</div>
+          <div><b>Rôle</b>Stagiaire technique</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cat-header"><span class="cat-title">Court / Moyen / Long métrage</span><span class="cat-line"></span></div>
     <div class="card">
       <div class="card-head">
         <h3>La Vie en Violet</h3>
         <div class="card-tag">Moyen métrage</div>
       </div>
       <div class="card-body">
-        <p class="placeholder">Film d'action sur un groupe de criminel, visant la dénonciation de la pédocriminalité.</p>
+        <p>Film d'action sur un groupe de criminels, visant la dénonciation de la pédocriminalité.</p>
         <div class="card-specs">
           <div><b>Rôle</b>Cadreur</div>
           <div><b>Réalisateur</b>Killian Jacquet</div>
         </div>
       </div>
+      <a class="card-video" href="#" target="_blank" rel="noopener">
+        <span class="play-icon"></span>
+        <span>Lien YouTube à ajouter →</span>
+      </a>
     </div>
 
+    <div class="cat-header"><span class="cat-title">Clip</span><span class="cat-line"></span></div>
     <div class="card">
       <div class="card-head">
         <h3>Ensemble</h3>
-        <div class="card-tag">Clip</div>
+        <div class="card-tag">Clip musical</div>
       </div>
       <div class="card-body">
-        <p class="placeholder">Réalisation d'un clip musical sur la musique 'Ensemble" de Yusmv. </p>
+        <p>Réalisation d'un clip musical sur la musique "Ensemble" de Yusmv.</p>
         <div class="card-specs">
           <div><b>Rôle</b>Réalisateur</div>
           <div><b>Format</b>Clip musical</div>
         </div>
       </div>
+      <a class="card-video" href="#" target="_blank" rel="noopener">
+        <span class="play-icon"></span>
+        <span>Lien YouTube à ajouter →</span>
+      </a>
     </div>
-    
+
+    <div class="cat-header"><span class="cat-title">Pub</span><span class="cat-line"></span></div>
     <div class="card">
       <div class="card-head">
         <h3>Les feuilles mortes</h3>
         <div class="card-tag">Pub</div>
       </div>
       <div class="card-body">
-        <p>Pub pour un rouge à lèvre dans le cadre d'un travail d'école, le tout filmé en noir et blanc.</p>
+        <p>Pub pour un rouge à lèvres dans le cadre d'un travail d'école, le tout filmé en noir et blanc.</p>
         <div class="card-specs">
           <div><b>Rôle</b>Chef opérateur</div>
           <div><b>Réalisateur</b>Maîza Talarico</div>
         </div>
       </div>
+      <a class="card-video" href="#" target="_blank" rel="noopener">
+        <span class="play-icon"></span>
+        <span>Lien YouTube à ajouter →</span>
+      </a>
     </div>
 
-    <a href="projects.html" class="more-link" target="_blank" rel="noopener">Voir tous les projets →</a>
   </div>
 </section>
 
-<section class="section-tight" id="contact" style="border-bottom:none;">
+<section class="section" id="skills">
+  <div class="wrap">
+    <div class="eyebrow">Boîte à outils</div>
+    <h2 class="h-title">Compétences</h2>
+    <div class="skill-cols">
+      <div class="skill-col">
+        <h4>Post-prod</h4>
+        <ul>
+          <li>Premiere Pro</li>
+          <li>DaVinci Resolve</li>
+          <li>After Effects</li>
+        </ul>
+      </div>
+      <div class="skill-col">
+        <h4>Lumière plateau</h4>
+        <ul>
+          <li>Électricien de plateau</li>
+          <li>DMX512 / Art-Net</li>
+          <li>Nanlux Evoke 900C</li>
+        </ul>
+      </div>
+      <div class="skill-col">
+        <h4>Profil</h4>
+        <ul>
+          <li>Statut auto-entrepreneur</li>
+          <li>Disponible plateau / prestation</li>
+          <li>Mobilité Montpellier &amp; région sud</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contact" style="border-bottom:none;">
   <div class="wrap">
     <div class="eyebrow">Contact</div>
     <h2 class="h-title">Travaillons ensemble !</h2>
